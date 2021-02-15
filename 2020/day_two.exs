@@ -12,7 +12,7 @@ defmodule PasswordChecker do
     {String.to_integer(from), String.to_integer(to), letter, password}
   end
 
-  def check_validity({from, to, letter, password}) do
+  defp check_validity({from, to, letter, password}) do
     occurances = password
     |> String.graphemes()
     |> Enum.count(fn x -> x == letter end)
